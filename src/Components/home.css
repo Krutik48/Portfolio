@@ -1,0 +1,9 @@
+.home{
+    height:100vh;
+}
+
+.profile{
+    width: 25.8rem;
+    height: 25.8rem;
+    border-radius:50% !important;
+}
