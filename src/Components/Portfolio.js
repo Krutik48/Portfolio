@@ -10,8 +10,12 @@ export default function Portfolio(prop) {
                 <Card.Body>
                     <Card.Title>{prop.title}</Card.Title>
                     <Card.Text>{prop.desc}</Card.Text>
-                    <Button variant="secondary">DEMO</Button> 
-                    <Button variant="secondary" className="mx-2">CODE</Button>
+                    <a href={prop.link1} target="_blank" rel="noopener noreferrer">
+                        <Button variant="secondary">DEMO</Button> 
+                    </a>
+                    <a href={prop.link2} target="_blank" rel="noopener noreferrer">
+                        <Button variant="secondary" className="mx-2">CODE</Button>
+                    </a>
                 </Card.Body>
             </Card>
         </div>

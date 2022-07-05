@@ -1,0 +1,19 @@
+.brand-name{
+    font-family: 'Parisienne', cursive;
+    font-size:30px !important;
+}
+
+.nav2{
+    /* background-image: url('../Project-img/nav-1.jpg'); */
+    /* background-position: right; */
+    animation: nav-anim 1s ease-out;
+}
+
+@keyframes nav-anim {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

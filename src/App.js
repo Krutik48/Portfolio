@@ -9,10 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <Navbar className="navbar"/>
-      <Home className="home"/>
+      <Navbar className="navbar" />
+      <Home className="home" />
       <Portfolios className="portfolio"/>
-      <Contact className="contact"/>
+      <Contact className="contact" />
       <Footer className="footer"/>
     </div>
   );

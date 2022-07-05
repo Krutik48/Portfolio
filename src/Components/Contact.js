@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 
 export default function Contact() {
   return (
-    <div className="d-flex flex-column justify-content-center container contact" style={{height:"100vh"}} >
+    <div id="contact" className="d-flex flex-column justify-content-center container contact" style={{height:"100vh"}} >
       <h1>Contact</h1>
       <h5>Looking forward to hearing from you...</h5>
 

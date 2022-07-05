@@ -1,9 +1,59 @@
 .home{
     height:100vh;
+    position:relative;
+    /* margin-top:60px; */
+    /* background-image: url('../Project-img/bg-5.jpg'); */
+    /* background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat; */
 }
 
 .profile{
     width: 25.8rem;
-    height: 25.8rem;
+    height: 27.0rem;
     border-radius:50% !important;
+    animation: prof-anim 0.5s ease-in-out;
+    margin: auto;
+}
+
+.intro{
+    animation: anim1 1s ease-in;
+}
+
+.intro2{
+    animation: anim1 1s ease-in;
+}
+
+.intro3{
+    animation: anim1 1s ease-in;
+}
+
+.intro4{
+    animation: anim1 1s ease-in;
+}
+
+@keyframes anim2{
+    
+}
+
+@keyframes anim1{
+   0%{
+        transform:translateY(100%);
+        opacity: 0;
+   }
+   100%{
+        transform:translateY(0);
+        opacity: 100;
+   }
+}
+
+@keyframes prof-anim{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 100;
+    }
 }
