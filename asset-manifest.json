@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.aa0d3fe1.css",
-    "main.js": "/Portfolio/static/js/main.9b25e91e.js",
+    "main.css": "/Portfolio/static/css/main.d7c1b9b7.css",
+    "main.js": "/Portfolio/static/js/main.e65c9bb9.js",
     "static/media/weatherapp.png": "/Portfolio/static/media/weatherapp.3f8b869259abd63c291a.png",
     "static/media/simongame.png": "/Portfolio/static/media/simongame.3f17bfc6162e7a4f092a.png",
     "static/media/krutik_final.jpg": "/Portfolio/static/media/krutik_final.049ceb810adc340817c9.jpg",
@@ -15,11 +15,11 @@
     "static/media/paintapp.jpeg": "/Portfolio/static/media/paintapp.e458e6f6860289759652.jpeg",
     "static/media/amongdinogame.png": "/Portfolio/static/media/amongdinogame.61f7b42616f2a9044c54.png",
     "index.html": "/Portfolio/index.html",
-    "main.aa0d3fe1.css.map": "/Portfolio/static/css/main.aa0d3fe1.css.map",
-    "main.9b25e91e.js.map": "/Portfolio/static/js/main.9b25e91e.js.map"
+    "main.d7c1b9b7.css.map": "/Portfolio/static/css/main.d7c1b9b7.css.map",
+    "main.e65c9bb9.js.map": "/Portfolio/static/js/main.e65c9bb9.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa0d3fe1.css",
-    "static/js/main.9b25e91e.js"
+    "static/css/main.d7c1b9b7.css",
+    "static/js/main.e65c9bb9.js"
   ]
 }
