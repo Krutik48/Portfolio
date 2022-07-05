@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.aa0d3fe1.css",
+    "main.js": "/Portfolio/static/js/main.9b25e91e.js",
+    "static/media/weatherapp.png": "/Portfolio/static/media/weatherapp.3f8b869259abd63c291a.png",
+    "static/media/simongame.png": "/Portfolio/static/media/simongame.3f17bfc6162e7a4f092a.png",
+    "static/media/krutik_final.jpg": "/Portfolio/static/media/krutik_final.049ceb810adc340817c9.jpg",
+    "static/media/analogclock.png": "/Portfolio/static/media/analogclock.5e04923f7a3f3ccc00d5.png",
+    "static/media/portfolio.png": "/Portfolio/static/media/portfolio.61c2728c9a06ad9f749a.png",
+    "static/media/mapsmapapi.jpg": "/Portfolio/static/media/mapsmapapi.96b070a7973e3b41dd93.jpg",
+    "static/media/currencyconverter.jpeg": "/Portfolio/static/media/currencyconverter.b4d756f94fdb2c82db8a.jpeg",
+    "static/media/newsapp.jpeg": "/Portfolio/static/media/newsapp.9d165124f7524764b7f9.jpeg",
+    "static/media/musicplayer.jpeg": "/Portfolio/static/media/musicplayer.ffeb0d58559f692a4ca1.jpeg",
+    "static/media/sciencewebapi.webp": "/Portfolio/static/media/sciencewebapi.1053e3c1ec1a4debb07e.webp",
+    "static/media/paintapp.jpeg": "/Portfolio/static/media/paintapp.e458e6f6860289759652.jpeg",
+    "static/media/amongdinogame.png": "/Portfolio/static/media/amongdinogame.61f7b42616f2a9044c54.png",
+    "index.html": "/Portfolio/index.html",
+    "main.aa0d3fe1.css.map": "/Portfolio/static/css/main.aa0d3fe1.css.map",
+    "main.9b25e91e.js.map": "/Portfolio/static/js/main.9b25e91e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa0d3fe1.css",
+    "static/js/main.9b25e91e.js"
+  ]
+}
