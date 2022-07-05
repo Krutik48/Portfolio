@@ -1,10 +1,9 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.d7c1b9b7.css",
-    "main.js": "/Portfolio/static/js/main.e65c9bb9.js",
+    "main.js": "/Portfolio/static/js/main.e320452d.js",
     "static/media/weatherapp.png": "/Portfolio/static/media/weatherapp.3f8b869259abd63c291a.png",
     "static/media/simongame.png": "/Portfolio/static/media/simongame.3f17bfc6162e7a4f092a.png",
-    "static/media/krutik_final.jpg": "/Portfolio/static/media/krutik_final.049ceb810adc340817c9.jpg",
     "static/media/analogclock.png": "/Portfolio/static/media/analogclock.5e04923f7a3f3ccc00d5.png",
     "static/media/portfolio.png": "/Portfolio/static/media/portfolio.61c2728c9a06ad9f749a.png",
     "static/media/mapsmapapi.jpg": "/Portfolio/static/media/mapsmapapi.96b070a7973e3b41dd93.jpg",
@@ -14,12 +13,13 @@
     "static/media/sciencewebapi.webp": "/Portfolio/static/media/sciencewebapi.1053e3c1ec1a4debb07e.webp",
     "static/media/paintapp.jpeg": "/Portfolio/static/media/paintapp.e458e6f6860289759652.jpeg",
     "static/media/amongdinogame.png": "/Portfolio/static/media/amongdinogame.61f7b42616f2a9044c54.png",
+    "static/media/krutik_final.jpg": "/Portfolio/static/media/krutik_final.82cec7d58463ee7c410e.jpg",
     "index.html": "/Portfolio/index.html",
     "main.d7c1b9b7.css.map": "/Portfolio/static/css/main.d7c1b9b7.css.map",
-    "main.e65c9bb9.js.map": "/Portfolio/static/js/main.e65c9bb9.js.map"
+    "main.e320452d.js.map": "/Portfolio/static/js/main.e320452d.js.map"
   },
   "entrypoints": [
     "static/css/main.d7c1b9b7.css",
-    "static/js/main.e65c9bb9.js"
+    "static/js/main.e320452d.js"
   ]
 }
