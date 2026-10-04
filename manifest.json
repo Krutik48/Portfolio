@@ -1,10 +1,11 @@
 {
   "name": "Krutik Malani — Portfolio",
   "short_name": "Krutik48",
+  "description": "Software engineer working on image vectorization and generative AI. CVPR 2026 paper (VectorArk), IIT Madras '24.",
   "start_url": "/Portfolio/",
   "display": "standalone",
-  "background_color": "#08090B",
-  "theme_color": "#08090B",
+  "background_color": "#F8F7F3",
+  "theme_color": "#F8F7F3",
   "icons": [
     {
       "src": "/Portfolio/favicon.svg",

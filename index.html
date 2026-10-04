@@ -3,27 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#08090B" />
-    <meta name="description" content="Krutik Malani — engineer building playful systems for web and Android. IIT Madras '24." />
+    <meta name="theme-color" content="#F8F7F3" />
+    <script>
+      // resolve theme before first paint — ?theme → saved choice → OS
+      (function () {
+        try {
+          var t =
+            new URLSearchParams(location.search).get('theme') ||
+            localStorage.getItem('km-theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          }
+          document.documentElement.dataset.theme = t;
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute('content', t === 'dark' ? '#141210' : '#F8F7F3');
+        } catch (e) {
+          /* no-op — light stays the default */
+        }
+      })();
+    </script>
+    <meta
+      name="description"
+      content="Software engineer at Adobe working on image vectorization and generative AI. CVPR 2026 paper (VectorArk), IIT Madras '24. Research, projects, and portfolio."
+    />
+    <meta name="author" content="Krutik Malani" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://krutik48.github.io/Portfolio/" />
 
-    <title>Krutik Malani — Playful systems for web & Android</title>
+    <title>Krutik Malani — Software Engineer</title>
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Krutik Malani — Playful systems for web & Android" />
-    <meta property="og:description" content="Engineer in Chennai building things that are fun to use. IIT Madras '24." />
+    <meta property="og:site_name" content="Krutik Malani — Portfolio" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content="Krutik Malani — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software engineer at Adobe working on image vectorization and generative AI. CVPR 2026 paper (VectorArk), IIT Madras '24."
+    />
     <meta property="og:url" content="https://krutik48.github.io/Portfolio/" />
+    <meta
+      property="og:image"
+      content="https://krutik48.github.io/Portfolio/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Krutik Malani — portfolio homepage with editorial serif typography"
+    />
 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Krutik Malani — Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Software engineer at Adobe working on image vectorization and generative AI. CVPR 2026 paper (VectorArk), IIT Madras '24."
+    />
+    <meta
+      name="twitter:image"
+      content="https://krutik48.github.io/Portfolio/og-image.jpg"
+    />
+
+    <link rel="manifest" href="/Portfolio/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/Portfolio/favicon.svg" />
     <link rel="apple-touch-icon" href="/Portfolio/favicon.svg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Krutik Malani",
+        "url": "https://krutik48.github.io/Portfolio/",
+        "jobTitle": "Software Engineer",
+        "worksFor": { "@type": "Organization", "name": "Adobe" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "IIT Madras" },
+        "knowsAbout": [
+          "Computer Vision",
+          "Generative AI",
+          "Image Vectorization",
+          "Machine Learning"
+        ],
+        "email": "mailto:krutikmalani480@gmail.com",
+        "sameAs": [
+          "https://github.com/Krutik48",
+          "https://www.linkedin.com/in/krutik-malani-71731b1ab",
+          "https://twitter.com/Krutik48"
+        ]
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/Portfolio/assets/index-DZFj3Fyw.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-DYYTmWZG.css">
+    <script type="module" crossorigin src="/Portfolio/assets/index-NOsWldaq.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-pm6EHoWf.css">
   </head>
   <body>
     <div id="root"></div>
