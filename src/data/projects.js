@@ -100,7 +100,7 @@ export const projects = [
     desc: 'Headlines by category, cached for the commute.',
     img: newsApp,
     demo: 'https://drive.google.com/drive/folders/1-C0WV6KtGoT_OfHdlIoARgIx3zK-cbUH',
-    code: 'https://github.com/Krutik48',
+    code: null,
   },
   {
     id: 'paint',
@@ -109,7 +109,7 @@ export const projects = [
     desc: 'Touch drawing with brushes, undo, and export.',
     img: paintApp,
     demo: 'https://drive.google.com/drive/folders/1-C0WV6KtGoT_OfHdlIoARgIx3zK-cbUH',
-    code: 'https://github.com/Krutik48',
+    code: null,
   },
   {
     id: 'currency',
@@ -118,6 +118,6 @@ export const projects = [
     desc: 'Live-rate currency conversion with an offline fallback.',
     img: currencyConverter,
     demo: 'https://drive.google.com/drive/folders/1kr-greFLdIf-R5N6K89JA5CBHe10mqSm',
-    code: 'https://github.com/Krutik48',
+    code: null,
   },
 ]

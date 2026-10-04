@@ -8,8 +8,8 @@ import portrait from '../assets/img/krutik.jpg'
 const TYPE_PHRASES = [
   'Software engineer at Adobe',
   'Vectorization & generative AI',
-  'CVPR 2026 — VectorArk',
   'IIT Madras, class of \u201924',
+  'VectorArk \u2014 CVPR 2026',
 ]
 
 function useIstClock() {
@@ -133,9 +133,9 @@ export default function Hero({ start }) {
           </p>
 
           <p className="hero-sub">
-            Working where computer graphics meets machine learning — image
-            vectorization and generative models on Adobe&rsquo;s Illustrator
-            team. Research at CVPR&nbsp;2026.
+            Image vectorization and generative models at Adobe &mdash; sitting
+            where computer graphics meets machine learning. Co-author of
+            VectorArk, accepted at CVPR&nbsp;2026.
           </p>
 
           <div className="hero-cta-row">

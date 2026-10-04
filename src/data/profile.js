@@ -29,16 +29,16 @@ export const profile = {
       org: 'Adobe',
       detail: 'Illustrator Team',
       period: 'Jun 2024 — Present',
-      note: 'Graphics research \u2192 product. Vectorization, generative models, and the tools that carry them.',
+      note: 'Vectorization and generative models for Illustrator \u2014 and the research around them: VectorArk (CVPR 2026) and two preprints.',
     },
     {
       org: 'IIT Madras',
-      detail: 'Integrated M.Tech / B.Tech',
+      detail: 'B.Tech, Electrical Engineering',
       period: 'Class of 2024',
-      note: 'Where the experiments started \u2014 games, apps, APIs, and a lot of late-night deploys.',
+      note: 'Where the experiments started \u2014 games, apps, and APIs.',
     },
   ],
-  toolbox: ['Web Development', 'Android', 'Computer Graphics', 'Generative AI', 'React', 'Python'],
+  toolbox: ['Computer Graphics', 'Generative AI', 'Machine Learning', 'PyTorch', 'Python', 'React', 'Web', 'Android'],
 }
 
 export const navLinks = [

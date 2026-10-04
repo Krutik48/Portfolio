@@ -1,12 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { gsap, prefersReducedMotion } from '../lib/anim'
-import { profile } from '../data/profile'
 
 const stats = [
-  { value: 3, pad: 2, suffix: '', label: 'Research papers', note: 'CVPR 2026 + arXiv' },
+  { value: 3, pad: 2, suffix: '', label: 'Research papers', note: '1 CVPR · 2 preprints' },
   { value: 11, pad: 2, suffix: '', label: 'Projects built', note: 'Web & Android' },
-  { value: null, display: 'Jun ’24', label: 'Joined Adobe', note: profile.team },
-  { value: null, display: '’24', label: profile.almaMater, note: 'Class of' },
+  { value: null, display: '2+ yrs', label: 'At Adobe', note: 'Illustrator team' },
+  { value: null, display: '’24', label: 'IIT Madras', note: 'B.Tech · Electrical' },
 ]
 
 export default function StatsBar() {

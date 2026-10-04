@@ -34,14 +34,16 @@ function ProjectCard({ project }) {
           >
             Live <span className="arr">↗</span>
           </a>
-          <a
-            className="card-link"
-            href={project.code}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Code <span className="arr">↗</span>
-          </a>
+          {project.code && (
+            <a
+              className="card-link"
+              href={project.code}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Code <span className="arr">↗</span>
+            </a>
+          )}
         </div>
       </div>
     </article>
@@ -118,9 +120,9 @@ export default function Work() {
             ))}
           </h2>
           <p className="sub">
-            Games, tools and apps from my college years at IIT Madras
-            (2020&ndash;2024) — some polished, all shipped. More experiments are
-            on the way; this shelf keeps growing.
+            Games, tools and apps from my college years at IIT Madras &mdash;
+            made in a pre-ChatGPT world, so every bug here is hand-written and
+            entirely mine.
           </p>
         </header>
 

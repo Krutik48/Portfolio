@@ -525,6 +525,9 @@
 }
 
 /* ─── Work — catalogue of plates ────────────────────────────────── */
+.work-heading .word {
+  margin-right: 0.24em;
+}
 .work-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

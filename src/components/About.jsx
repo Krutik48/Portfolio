@@ -28,7 +28,7 @@ export default function About() {
     <section className="about" id="about" ref={ref}>
       <div className="container about-grid">
         <div className="about-copy">
-          <h2 className="about-block">The short version</h2>
+          <h2 className="about-block">In brief</h2>
           <p className="about-blurb about-block">{profile.blurb}</p>
 
           <div className="about-toolbox about-block">
