@@ -81,7 +81,7 @@ export default function Hero({ start }) {
   }, [])
 
   return (
-    <section className="hero" id="home" ref={sectionRef}>
+    <section className="hero" ref={sectionRef}>
       <div className="hero-content container">
         <p className="hero-kicker mono">
           <span>Software Engineer</span>

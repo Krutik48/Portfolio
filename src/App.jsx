@@ -48,9 +48,12 @@ export default function App() {
       <Navbar />
 
       <main>
-        <Hero start={revealed} />
-        <StatsBar />
-        <About />
+        <section className="intro" id="home">
+          <Hero start={revealed} />
+          <StatsBar />
+          <About />
+        </section>
+
         <Research />
         <Work />
 

@@ -52,7 +52,7 @@ export default function About() {
   }, [])
 
   return (
-    <section className="section about" id="about" ref={ref}>
+    <section className="about" id="about" ref={ref}>
       <div className="container about-grid">
         <div className="about-portrait-wrap">
           <div className="about-portrait">

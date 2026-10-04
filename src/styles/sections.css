@@ -208,10 +208,10 @@
   }
 }
 
-/* ─── Hero — typographic ────────────────────────────────────────── */
+/* ─── Intro: hero + numbers + about as one continuous section ───── */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: calc(100svh - 48px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -342,10 +342,10 @@
   font-size: 0.66rem;
 }
 
-/* ─── Stats — by the numbers ────────────────────────────────────── */
+/* ─── Numbers — fact strip inside the intro ─────────────────────── */
 .stats {
-  padding-block: clamp(48px, 7vw, 88px);
-  border-bottom: 1px solid var(--line);
+  padding-block: clamp(32px, 4.5vw, 56px);
+  border-top: 1px solid var(--ink);
 }
 .stats-grid {
   display: grid;
@@ -911,7 +911,10 @@
   }
 }
 
-/* ─── About ─────────────────────────────────────────────────────── */
+/* ─── About — closes the intro section ──────────────────────────── */
+.about {
+  padding-block: clamp(56px, 8vw, 120px) clamp(64px, 9vw, 140px);
+}
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
