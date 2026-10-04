@@ -42,12 +42,12 @@ export default function PaperFlow() {
     >
       <defs>
         <linearGradient id="flowA" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#ff4d00" stopOpacity="0.85" />
-          <stop offset="100%" stopColor="#7a2a10" stopOpacity="0.6" />
+          <stop offset="0%" stopColor="#DA291C" stopOpacity="0.92" />
+          <stop offset="100%" stopColor="#8C170E" stopOpacity="0.75" />
         </linearGradient>
         <linearGradient id="flowB" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#ece9e2" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="#8a9099" stopOpacity="0.4" />
+          <stop offset="0%" stopColor="#2E2C28" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="#B9B5AC" stopOpacity="0.55" />
         </linearGradient>
       </defs>
 

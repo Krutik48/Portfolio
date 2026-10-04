@@ -1,28 +1,27 @@
 # Krutik Malani — Portfolio
 
-Personal portfolio, rebuilt from scratch in 2026.
+Personal portfolio, rebuilt 2026.
 
 **Live:** https://krutik48.github.io/Portfolio/
 
 ## Stack
 
 - **React 18 + Vite** — app shell and build
-- **Three.js / @react-three/fiber** — 3D hero: a custom GLSL "liquid chrome" blob with simplex-noise displacement, orbit rings and particle dust
-- **GSAP + ScrollTrigger** — preloader choreography, masked text reveals, pinned horizontal research gallery, parallax
+- **GSAP + ScrollTrigger** — preloader, masked reveals, gentle parallax, counters
 - **Lenis** — smooth scrolling, synced to the GSAP ticker
-
-No UI kits. All components, motion and styling are custom.
+- No UI kits, no 3D — a light editorial theme: Fraunces (display) · Instrument Sans (body) · JetBrains Mono (labels)
 
 ## Structure
 
 ```
 src/
-├── components/     # sections + UI (Navbar, Hero, Work, Research, About, Contact…)
-├── three/          # HeroScene — shaders, blob, particles, rings
+├── components/     # sections + UI (Navbar, Hero, About, Research, Work, Contact…)
 ├── data/           # profile.js · projects.js · research.js  ← edit content here
-├── hooks/          # useLenis, useMagnetic
+├── hooks/          # useLenis
 ├── lib/            # gsap setup, scroll helpers
 └── styles/         # tokens.css, global.css, sections.css
+public/
+└── sizzlers/       # VectorArk's own animated demo reels (byte-identical copies)
 ```
 
 ## Adding a project

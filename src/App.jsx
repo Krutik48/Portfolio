@@ -1,29 +1,25 @@
 import { useCallback, useEffect, useState } from 'react'
 import Preloader from './components/Preloader'
-import Cursor from './components/Cursor'
 import ScrollProgress from './components/ScrollProgress'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
 import StatsBar from './components/StatsBar'
-import Work from './components/Work'
-import Research from './components/Research'
 import About from './components/About'
+import Research from './components/Research'
+import Work from './components/Work'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import useLenis from './hooks/useLenis'
 import { prefersReducedMotion } from './lib/anim'
-import { profile } from './data/profile'
 
-const MARQUEE_ITEMS = [
+const TICKER_ITEMS = [
+  'Adobe Illustrator',
   'Vectorization',
   'Generative AI',
-  'Illustrator',
-  'Web',
-  'Android',
-  'IIT Madras ’24',
-  'Chennai',
+  'CVPR 2026',
   'Computer Graphics',
+  'Open to conversations',
 ]
 
 export default function App() {
@@ -34,12 +30,10 @@ export default function App() {
   const onReveal = useCallback(() => setRevealed(true), [])
   const onDone = useCallback(() => setLoaded(true), [])
 
-  // unlock scrolling once the curtain is gone
   useEffect(() => {
     if (loaded) lenisRef.current?.start()
   }, [loaded, lenisRef])
 
-  // instant start for reduced-motion visitors
   useEffect(() => {
     if (prefersReducedMotion()) {
       setRevealed(true)
@@ -50,31 +44,24 @@ export default function App() {
   return (
     <>
       {!prefersReducedMotion() && <Preloader onReveal={onReveal} onDone={onDone} />}
-      <Cursor />
       <ScrollProgress />
       <Navbar />
 
       <main>
         <Hero start={revealed} />
-
-        <div className="marquee-band" aria-hidden="true">
-          <Marquee items={MARQUEE_ITEMS} variant="hivis" duration={30} />
-        </div>
-
         <StatsBar />
-        <Work />
-        <Research />
         <About />
+        <Research />
+        <Work />
 
-        <div className="marquee-band marquee-band--ghost" aria-hidden="true">
-          <Marquee items={['Let’s build', '✦', 'together', '✦']} variant="ghost" duration={22} />
+        <div className="ticker-band" aria-hidden="true">
+          <Marquee items={TICKER_ITEMS} variant="ticker" duration={34} />
         </div>
 
         <Contact />
       </main>
 
       <Footer />
-      <div className="grain" aria-hidden="true" />
     </>
   )
 }

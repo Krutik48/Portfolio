@@ -4,7 +4,7 @@ export default function Marquee({ items, variant = 'hivis', duration = 26 }) {
       {items.map((item, i) => (
         <span className="marquee-item" key={i}>
           {item}
-          <span className="marquee-star">✦</span>
+          <span className="marquee-star">✳</span>
         </span>
       ))}
     </div>

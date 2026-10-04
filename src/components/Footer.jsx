@@ -26,9 +26,9 @@ export default function Footer() {
           {profile.location} · {time} IST
         </span>
         <span className="mono footer-made">
-          Built with React · Three.js · GSAP
+          Set in Fraunces &amp; Instrument Sans
         </span>
-        <button className="footer-top mono" onClick={scrollToTop} data-cursor="TOP">
+        <button className="footer-top mono" onClick={scrollToTop}>
           Back to top ↑
         </button>
       </div>

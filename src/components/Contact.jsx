@@ -1,11 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { gsap, prefersReducedMotion } from '../lib/anim'
 import { profile } from '../data/profile'
-import useMagnetic from '../hooks/useMagnetic'
 
 export default function Contact() {
   const ref = useRef(null)
-  const magnetRef = useMagnetic(0.3)
 
   useEffect(() => {
     if (prefersReducedMotion()) return undefined
@@ -68,17 +66,8 @@ export default function Contact() {
         </h2>
 
         <div className="contact-mail-row">
-          <a className="contact-mail" href={`mailto:${profile.email}`} data-cursor="MAIL">
+          <a className="contact-mail" href={`mailto:${profile.email}`}>
             {profile.email}
-          </a>
-          <a
-            className="contact-orbit"
-            href={`mailto:${profile.email}`}
-            ref={magnetRef}
-            data-cursor="SAY HI"
-            aria-label="Say hello"
-          >
-            <span>Say hello</span>
           </a>
         </div>
 

@@ -13,11 +13,9 @@ function ProjectCard({ project }) {
         href={project.demo}
         target="_blank"
         rel="noopener noreferrer"
-        data-cursor="OPEN"
         aria-label={`${project.title} — open live`}
       >
         <img src={project.img} alt={`${project.title} preview`} loading="lazy" />
-        <span className="card-tint" aria-hidden="true" />
       </a>
       <div className="card-body">
         <div className="card-top mono">

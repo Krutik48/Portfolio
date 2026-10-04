@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import HeroScene from '../three/HeroScene'
 import { gsap, prefersReducedMotion } from '../lib/anim'
 import { profile } from '../data/profile'
 import { scrollToId } from '../lib/scroll'
-import useMagnetic from '../hooks/useMagnetic'
 
 function useIstClock() {
   const [time, setTime] = useState('--:--:--')
@@ -25,74 +23,51 @@ function useIstClock() {
 
 export default function Hero({ start }) {
   const sectionRef = useRef(null)
-  const canvasWrapRef = useRef(null)
-  const glowRef = useRef(null)
   const playedRef = useRef(false)
   const clock = useIstClock()
-  const magnetRef = useMagnetic(0.25)
 
-  /* entrance choreography — runs once the preloader curtain lifts */
+  /* entrance — runs once the preloader lifts */
   useEffect(() => {
     if (!start || playedRef.current) return
     playedRef.current = true
 
     const ctx = gsap.context(() => {
       if (prefersReducedMotion()) {
-        gsap.set(['.hero-line .line-inner', '.hero-sub', '.hero-cta', '.hero-meta'], {
-          y: 0,
-          yPercent: 0,
-          opacity: 1,
-        })
+        gsap.set(
+          ['.hero-kicker', '.hero-line .line-inner', '.hero-rule', '.hero-sub', '.hero-cta', '.hero-meta'],
+          { y: 0, yPercent: 0, opacity: 1, scaleX: 1 }
+        )
         return
       }
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
-      tl.fromTo(
-        '.hero-line .line-inner',
-        { yPercent: 112 },
-        { yPercent: 0, duration: 1.15, stagger: 0.1 }
-      )
+      tl.fromTo('.hero-kicker', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 })
         .fromTo(
-          '.hero-sub',
-          { y: 34, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.9 },
-          '-=0.55'
+          '.hero-line .line-inner',
+          { yPercent: 112 },
+          { yPercent: 0, duration: 1.15, stagger: 0.09 },
+          '-=0.5'
         )
+        .fromTo('.hero-rule', { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: 'power3.inOut' }, '-=0.7')
+        .fromTo('.hero-sub', { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85 }, '-=0.75')
         .fromTo(
           '.hero-cta',
-          { y: 26, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, stagger: 0.08 },
+          { y: 22, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.75, stagger: 0.08 },
           '-=0.6'
         )
-        .fromTo(
-          '.hero-meta',
-          { opacity: 0 },
-          { opacity: 1, duration: 0.9 },
-          '-=0.4'
-        )
+        .fromTo('.hero-meta', { opacity: 0 }, { opacity: 1, duration: 0.9 }, '-=0.4')
     }, sectionRef)
 
     return () => ctx.revert()
   }, [start])
 
-  /* scroll: canvas recedes while the type lifts away */
+  /* gentle scroll parallax — content drifts up, quietly */
   useEffect(() => {
     if (prefersReducedMotion()) return undefined
     const ctx = gsap.context(() => {
-      gsap.to(canvasWrapRef.current, {
-        yPercent: 16,
-        scale: 0.9,
-        opacity: 0.22,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      })
       gsap.to('.hero-content', {
-        yPercent: -14,
-        opacity: 0.15,
+        yPercent: -8,
+        opacity: 0.25,
         ease: 'none',
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -105,67 +80,43 @@ export default function Hero({ start }) {
     return () => ctx.revert()
   }, [])
 
-  /* cursor-follow warmth */
-  useEffect(() => {
-    const el = sectionRef.current
-    const glow = glowRef.current
-    if (!el || !glow) return undefined
-    let raf = 0
-    const onMove = (e) => {
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(() => {
-        const r = el.getBoundingClientRect()
-        glow.style.setProperty('--mx', `${e.clientX - r.left}px`)
-        glow.style.setProperty('--my', `${e.clientY - r.top}px`)
-      })
-    }
-    el.addEventListener('mousemove', onMove, { passive: true })
-    return () => {
-      el.removeEventListener('mousemove', onMove)
-      cancelAnimationFrame(raf)
-    }
-  }, [])
-
   return (
     <section className="hero" id="home" ref={sectionRef}>
-      <div className="hero-canvas" ref={canvasWrapRef} aria-hidden="true">
-        <HeroScene />
-      </div>
-      <div className="hero-glow" ref={glowRef} aria-hidden="true" />
-
       <div className="hero-content container">
-        <h1 className="hero-title" aria-label="Hi, I'm Krutik Malani">
-          <span className="line hero-line" aria-hidden="true">
-            <span className="line-inner hero-line-sm">Hi, I&rsquo;m</span>
-          </span>
+        <p className="hero-kicker mono">
+          <span>Software Engineer</span>
+          <span className="sep">·</span>
+          <span>Adobe — Illustrator</span>
+          <span className="sep">·</span>
+          <span>IIT Madras &rsquo;24</span>
+        </p>
+
+        <h1 className="hero-title" aria-label="Krutik Malani">
           <span className="line hero-line" aria-hidden="true">
             <span className="line-inner">Krutik</span>
           </span>
           <span className="line hero-line" aria-hidden="true">
-            <span className="line-inner hero-line-outline">Malani</span>
+            <span className="line-inner hero-name-italic">Malani</span>
           </span>
         </h1>
 
+        <div className="hero-rule" aria-hidden="true" />
+
         <p className="hero-sub">
-          Software engineer at Adobe &mdash; Illustrator team, working on
-          vectorization and generative AI. Research published at CVPR 2026.
-          IIT Madras &rsquo;24.
+          Working where computer graphics meets machine learning — image
+          vectorization and generative models on Adobe&rsquo;s Illustrator team.
+          Research published at CVPR&nbsp;2026.
         </p>
 
         <div className="hero-cta-row">
-          <button
-            className="btn hero-cta"
-            onClick={() => scrollToId('#work')}
-            data-cursor="SEE"
-          >
-            See the work <span className="arr">↓</span>
+          <button className="btn hero-cta" onClick={() => scrollToId('#research')}>
+            Read the research <span className="arr">↓</span>
           </button>
           <a
             className="btn btn--solid hero-cta"
             href={profile.resume}
             target="_blank"
             rel="noopener noreferrer"
-            data-cursor="PDF"
           >
             Résumé <span className="arr">↗</span>
           </a>
@@ -176,11 +127,7 @@ export default function Hero({ start }) {
         <span className="mono">
           {profile.coords} · IST {clock}
         </span>
-        <button
-          className="hero-scroll mono"
-          onClick={() => scrollToId('#work')}
-          ref={magnetRef}
-        >
+        <button className="hero-scroll mono" onClick={() => scrollToId('#about')}>
           Scroll
           <span className="hero-scroll-line" aria-hidden="true" />
         </button>
