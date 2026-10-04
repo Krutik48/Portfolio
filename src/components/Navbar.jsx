@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { navLinks, profile } from '../data/profile'
 import { scrollToId } from '../lib/scroll'
+import Arrow from './Arrow'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -49,18 +51,21 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Résumé <span className="arr">↗</span>
+              Résumé <Arrow />
             </a>
           </nav>
-          <button
-            className={`nav-burger ${open ? 'is-open' : ''}`}
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-label={open ? 'Close menu' : 'Open menu'}
-          >
-            <span />
-            <span />
-          </button>
+          <div className="nav-right">
+            <ThemeToggle />
+            <button
+              className={`nav-burger ${open ? 'is-open' : ''}`}
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-label={open ? 'Close menu' : 'Open menu'}
+            >
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </header>
 
@@ -86,7 +91,7 @@ export default function Navbar() {
             style={{ transitionDelay: '0.32s' }}
             tabIndex={open ? 0 : -1}
           >
-            Résumé ↗
+            Résumé <Arrow />
           </a>
         </nav>
         <div className="menu-foot mono">

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap, prefersReducedMotion } from '../lib/anim'
 import { profile } from '../data/profile'
+import Arrow from './Arrow'
 
 export default function Contact() {
   const ref = useRef(null)
@@ -81,12 +82,12 @@ export default function Contact() {
               rel="noopener noreferrer"
             >
               <span className="contact-row-name">{s.label}</span>
-              <span className="contact-row-arr" aria-hidden="true">↗</span>
+              <Arrow className="contact-row-arr" />
             </a>
           ))}
           <a className="contact-row" href={profile.whatsapp} target="_blank" rel="noopener noreferrer">
             <span className="contact-row-name">WhatsApp</span>
-            <span className="contact-row-arr" aria-hidden="true">↗</span>
+            <Arrow className="contact-row-arr" />
           </a>
         </div>
       </div>

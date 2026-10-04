@@ -4,6 +4,7 @@ import { papers } from '../data/research'
 import SizzlerPlayer from './SizzlerPlayer'
 import PaperTree from './PaperTree'
 import PaperFlow from './PaperFlow'
+import Arrow from './Arrow'
 
 function Authors({ authors }) {
   const parts = authors.split('Krutik Malani')
@@ -40,7 +41,7 @@ function PaperInfo({ paper }) {
             rel="noopener noreferrer"
             data-cursor="READ"
           >
-            {l.label} <span className="arr">↗</span>
+            {l.label} <Arrow />
           </a>
         ))}
       </div>
@@ -134,7 +135,7 @@ export default function Research() {
             rel="noopener noreferrer"
             data-cursor="READ"
           >
-            All publications <span className="arr">↗</span>
+            All publications <Arrow />
           </a>
         </div>
       </div>

@@ -8,8 +8,8 @@ export const profile = {
   team: 'Illustrator team',
   careerStart: '2024-06-01', // powers the computed "years of experience" stat
   since: 'Jun 2024',
-  location: 'Chennai, India',
-  coords: '13.0827°N, 80.2707°E',
+  location: 'Surat, India',
+  coords: '21.1702°N, 72.8311°E',
   timezone: 'Asia/Kolkata',
   almaMater: "IIT Madras '24",
   blurb:

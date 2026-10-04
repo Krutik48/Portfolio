@@ -4,6 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F8F7F3" />
+    <script>
+      // resolve theme before first paint — ?theme → saved choice → OS
+      (function () {
+        try {
+          var t =
+            new URLSearchParams(location.search).get('theme') ||
+            localStorage.getItem('km-theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          }
+          document.documentElement.dataset.theme = t;
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute('content', t === 'dark' ? '#141210' : '#F8F7F3');
+        } catch (e) {
+          /* no-op — light stays the default */
+        }
+      })();
+    </script>
     <meta name="description" content="Software engineer working on image vectorization and generative models. Co-author of VectorArk (CVPR 2026). IIT Madras '24." />
 
     <title>Krutik Malani — Software Engineer</title>

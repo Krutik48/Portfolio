@@ -4,6 +4,7 @@ import { profile } from '../data/profile'
 import { scrollToId } from '../lib/scroll'
 import useTypewriter from '../hooks/useTypewriter'
 import portrait from '../assets/img/krutik.jpg'
+import Arrow from './Arrow'
 
 const TYPE_PHRASES = [
   'Paper accepted at CVPR 2026',
@@ -138,7 +139,7 @@ export default function Hero({ start }) {
 
           <div className="hero-cta-row">
             <button className="btn hero-cta" onClick={() => scrollToId('#research')}>
-              Read the research <span className="arr">↓</span>
+              Read the research <Arrow dir="s" />
             </button>
             <a
               className="btn btn--solid hero-cta"
@@ -146,7 +147,7 @@ export default function Hero({ start }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Résumé <span className="arr">↗</span>
+              Résumé <Arrow />
             </a>
           </div>
         </div>

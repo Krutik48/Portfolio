@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { prefersReducedMotion } from '../lib/anim'
+import Arrow from './Arrow'
 
 /**
  * VectorArk "In Action" — embeds the paper's released sizzler demos,
@@ -98,7 +99,7 @@ export default function SizzlerPlayer() {
           className="lab-tab mono sizzler-replay"
           onClick={() => setRunKey((k) => k + 1)}
         >
-          ↻ Replay
+          <Arrow dir="rot" /> Replay
         </button>
       </div>
 
@@ -111,7 +112,7 @@ export default function SizzlerPlayer() {
           rel="noopener noreferrer"
           className="sizzler-credit"
         >
-          vectorark.github.io ↗
+          vectorark.github.io <Arrow />
         </a>
       </p>
     </div>

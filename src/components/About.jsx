@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap, prefersReducedMotion } from '../lib/anim'
 import { profile } from '../data/profile'
+import Arrow from './Arrow'
 
 export default function About() {
   const ref = useRef(null)
@@ -45,7 +46,7 @@ export default function About() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Full résumé <span className="arr">↗</span>
+            Full résumé <Arrow />
           </a>
         </div>
 

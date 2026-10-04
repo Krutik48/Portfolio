@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap, prefersReducedMotion } from '../lib/anim'
 import { projects, groups } from '../data/projects'
+import Arrow from './Arrow'
 
 const FEATURED = ['simon', 'music']
 
@@ -60,7 +61,7 @@ function ProjectCard({ project }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Live <span className="arr">↗</span>
+            Live <Arrow />
           </a>
           {project.code && (
             <a
@@ -69,7 +70,7 @@ function ProjectCard({ project }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Code <span className="arr">↗</span>
+              Code <Arrow />
             </a>
           )}
         </div>
@@ -110,11 +111,13 @@ export default function Work() {
         )
         const img = card.querySelector('img')
         if (img) {
+          /* gentle zoom-in on scroll — the frame clips it, so the
+             image can never slide over the browser chrome */
           gsap.fromTo(
             img,
-            { yPercent: -6 },
+            { scale: 1 },
             {
-              yPercent: 6,
+              scale: 1.08,
               ease: 'none',
               scrollTrigger: {
                 trigger: card,

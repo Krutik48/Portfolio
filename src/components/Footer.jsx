@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { profile } from '../data/profile'
 import { scrollToTop } from '../lib/scroll'
+import Arrow from './Arrow'
 
 export default function Footer() {
   const [time, setTime] = useState('')
@@ -29,7 +30,7 @@ export default function Footer() {
           Set in Fraunces, Instrument Sans &amp; JetBrains Mono
         </span>
         <button className="footer-top mono" onClick={scrollToTop}>
-          Back to top ↑
+          Back to top <Arrow dir="n" />
         </button>
       </div>
     </footer>
