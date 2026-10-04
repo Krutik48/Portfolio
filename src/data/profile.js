@@ -13,7 +13,7 @@ export const profile = {
   timezone: 'Asia/Kolkata',
   almaMater: "IIT Madras '24",
   blurb:
-    'I build for problems I run into \u2014 usually the ones without a good solution out there. When nothing fits, I make the tool, use it every day, and keep refining it. That\u2019s the work I care about most.',
+    'Often the solution already exists \u2014 it\u2019s just not what I want. So I build my own: personalized, shaped around how I actually work, and refined every time I use it.',
   resume:
     'https://drive.google.com/file/d/10rm-Ft-gRdgMi2urkm50y1zvDmopbt7E/view',
   email: 'krutikmalani480@gmail.com',
