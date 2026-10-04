@@ -81,8 +81,8 @@ export default function Research() {
         <header className="section-head">
           <h2>Research</h2>
           <p className="sub">
-            Selected papers &mdash; teaching models to think in vectors, and
-            evaluating what they preserve.
+            Selected papers on computer vision, vectorization, and generative
+            AI.
           </p>
         </header>
 

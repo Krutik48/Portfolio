@@ -10,6 +10,7 @@ import Research from './components/Research'
 import Work from './components/Work'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Cursor from './components/Cursor'
 import useLenis from './hooks/useLenis'
 import { prefersReducedMotion } from './lib/anim'
 
@@ -44,6 +45,7 @@ export default function App() {
   return (
     <>
       {!prefersReducedMotion() && <Preloader onReveal={onReveal} onDone={onDone} />}
+      <Cursor />
       <ScrollProgress />
       <Navbar />
 

@@ -67,7 +67,11 @@ export default function Contact() {
         </h2>
 
         <div className="contact-mail-row">
-          <a className="contact-mail" href={`mailto:${profile.email}`}>
+          <a
+            className="contact-mail"
+            href={`mailto:${profile.email}`}
+            data-cursor="MAIL"
+          >
             {profile.email}
           </a>
         </div>

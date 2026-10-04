@@ -24,6 +24,7 @@ function ProjectCard({ project }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${project.title} — open live`}
+        data-cursor="OPEN"
       >
         {isWeb ? (
           <span className="browser">
