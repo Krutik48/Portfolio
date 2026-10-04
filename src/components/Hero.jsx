@@ -134,21 +134,22 @@ export default function Hero({ start }) {
       <div className="hero-glow" ref={glowRef} aria-hidden="true" />
 
       <div className="hero-content container">
-        <h1 className="hero-title" aria-label="I build playful systems">
+        <h1 className="hero-title" aria-label="Hi, I'm Krutik Malani">
           <span className="line hero-line" aria-hidden="true">
-            <span className="line-inner hero-line-sm">I build</span>
+            <span className="line-inner hero-line-sm">Hi, I&rsquo;m</span>
           </span>
           <span className="line hero-line" aria-hidden="true">
-            <span className="line-inner">Playful</span>
+            <span className="line-inner">Krutik</span>
           </span>
           <span className="line hero-line" aria-hidden="true">
-            <span className="line-inner hero-line-outline">Systems</span>
+            <span className="line-inner hero-line-outline">Malani</span>
           </span>
         </h1>
 
         <p className="hero-sub">
-          Software engineer on Adobe&rsquo;s Illustrator team — vectorization,
-          generative models, and the tools that carry them. IIT Madras &rsquo;24.
+          Software engineer at Adobe &mdash; Illustrator team, working on
+          vectorization and generative AI. Research published at CVPR 2026.
+          IIT Madras &rsquo;24.
         </p>
 
         <div className="hero-cta-row">

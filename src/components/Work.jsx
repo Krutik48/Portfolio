@@ -22,6 +22,7 @@ function ProjectCard({ project }) {
       <div className="card-body">
         <div className="card-top mono">
           <span>{groups.find((g) => g.id === project.category)?.label}</span>
+          <span className="card-era">College</span>
           <span className="card-mark" aria-hidden="true">✦</span>
         </div>
         <h3 className="card-title">{project.title}</h3>
@@ -119,8 +120,9 @@ export default function Work() {
             ))}
           </h2>
           <p className="sub">
-            Games, tools and apps — some polished, all shipped. More experiments
-            are on the way; this shelf keeps growing.
+            Games, tools and apps from my college years at IIT Madras
+            (2020&ndash;2024) — some polished, all shipped. More experiments are
+            on the way; this shelf keeps growing.
           </p>
         </header>
 

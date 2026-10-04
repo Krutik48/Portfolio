@@ -440,6 +440,7 @@
   width: 100%;
   height: 112%;
   object-fit: cover;
+  object-position: center;
   filter: grayscale(1) contrast(1.06) brightness(0.92);
   transition: filter 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
@@ -713,7 +714,7 @@
 }
 .about-portrait img {
   width: 100%;
-  aspect-ratio: 4 / 4.6;
+  aspect-ratio: 4 / 4.585;
   object-fit: cover;
   filter: grayscale(0.9) contrast(1.05);
   transition: filter 0.8s var(--ease-out), transform 0.8s var(--ease-out);
@@ -913,4 +914,344 @@
   .footer-made {
     display: none;
   }
+}
+
+/* ─── Research showcase v2 (panels + live widgets) ─────────────── */
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(28px, 4.5vw, 72px);
+  align-items: center;
+  padding-block: clamp(44px, 6.5vw, 88px);
+  border-top: 1px solid var(--line);
+}
+.panel--rev {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+}
+.panel--rev .panel-info {
+  order: 2;
+}
+.panel--rev .panel-visual {
+  order: 1;
+}
+.panel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+.panel-info .paper-title {
+  font-size: clamp(1.25rem, 1.9vw, 1.7rem);
+  line-height: 1.14;
+}
+.panel-info .paper-abstract {
+  font-size: 0.95rem;
+}
+.panel-info .paper-links {
+  margin-top: 6px;
+}
+.panel-visual {
+  min-width: 0;
+}
+.panel-caption {
+  margin-top: 14px;
+  font-size: 0.6rem;
+  line-height: 1.7;
+}
+.research-outro {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 36px);
+  flex-wrap: wrap;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  padding: clamp(22px, 3vw, 36px);
+  margin-top: clamp(20px, 3vw, 40px);
+}
+.research-outro h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+.research-outro .paper-link {
+  margin-left: auto;
+}
+.research-outro-mark {
+  font-size: 1.8rem;
+  color: var(--hivis);
+  animation: spin-slow 9s linear infinite;
+  display: inline-block;
+}
+@media (max-width: 900px) {
+  .panel,
+  .panel--rev {
+    grid-template-columns: 1fr;
+  }
+  .panel--rev .panel-info {
+    order: 1;
+  }
+  .panel--rev .panel-visual {
+    order: 2;
+  }
+  .research-outro .paper-link {
+    margin-left: 0;
+  }
+}
+
+/* ─── SizzlerPlayer — embedded VectorArk demo reels ───────────── */
+.sizzler {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--ink);
+  padding: clamp(14px, 2vw, 22px);
+}
+.sizzler-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+  font-size: 0.6rem;
+}
+.sizzler-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--hivis);
+}
+.sizzler-live i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hivis);
+  animation: live-pulse 1.6s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.72);
+  }
+}
+.sizzler-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.sizzler-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.sizzler-poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--ink-2);
+}
+.sizzler-poster-word {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  letter-spacing: -0.02em;
+  color: var(--bone);
+}
+.sizzler-poster-sub {
+  font-size: 0.58rem;
+}
+.sizzler-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.sizzler-tabs {
+  display: flex;
+  gap: 8px;
+}
+.sizzler-replay {
+  margin-left: auto;
+}
+.lab-tab {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: 0.6rem;
+  color: var(--bone-dim);
+  transition:
+    border-color 0.3s var(--ease-out),
+    color 0.3s var(--ease-out),
+    background 0.3s var(--ease-out);
+}
+.lab-tab:hover {
+  border-color: var(--line-strong);
+  color: var(--bone);
+}
+.lab-tab.is-active {
+  background: var(--hivis);
+  border-color: var(--hivis);
+  color: var(--ink);
+  font-weight: 700;
+}
+.sizzler-credit {
+  color: var(--bone-dim);
+  border-bottom: 1px solid var(--line-strong);
+  transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+.sizzler-credit:hover {
+  color: var(--hivis);
+  border-color: var(--hivis);
+}
+@media (max-width: 480px) {
+  .sizzler-replay {
+    margin-left: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sizzler-live i {
+    animation: none;
+  }
+}
+
+/* ─── paper diagrams ────────────────────────────────────────────── */
+.visual-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--ink);
+  padding: clamp(16px, 2.4vw, 30px);
+}
+.diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.diagram text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-anchor: middle;
+}
+
+/* tree (Beyond the Pixels) */
+.tree .tree-node rect {
+  fill: var(--ink-3);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+.tree .tree-node text {
+  fill: var(--bone-dim);
+}
+.tree .tree-node.is-alert rect {
+  stroke: rgba(255, 77, 0, 0.75);
+}
+.tree .tree-node.is-alert text {
+  fill: var(--hivis);
+}
+.tree .tree-edge {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  stroke-dasharray: 1;
+}
+.tree .tree-chip rect {
+  fill: none;
+  stroke: var(--line-strong);
+}
+.tree .tree-chip text {
+  fill: var(--bone-dim);
+  font-size: 9.5px;
+}
+.tree .tree-chip.is-alert rect {
+  stroke: rgba(255, 77, 0, 0.8);
+}
+.tree .tree-chip.is-alert text {
+  fill: var(--hivis);
+}
+
+/* flow (Taming Identity) */
+.flow .flow-src text,
+.flow .flow-caption {
+  fill: var(--steel);
+  font-size: 10px;
+}
+.flow .flow-path {
+  stroke: var(--line-strong);
+  stroke-width: 1.4;
+  fill: none;
+  stroke-dasharray: 5 6;
+  animation: flow-dash 1.15s linear infinite;
+}
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -11;
+  }
+}
+.flow .flow-node rect {
+  fill: var(--ink-3);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+.flow .flow-node text {
+  fill: var(--bone-dim);
+  font-size: 10px;
+}
+.flow .flow-node.is-hot rect {
+  stroke: var(--hivis);
+  animation: node-pulse 2.6s ease-in-out infinite;
+}
+.flow .flow-node.is-hot text {
+  fill: var(--bone);
+}
+@keyframes node-pulse {
+  0%,
+  100% {
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-opacity: 0.35;
+  }
+}
+.flow .flow-chip rect {
+  fill: none;
+  stroke: rgba(255, 77, 0, 0.7);
+}
+.flow .flow-chip text {
+  fill: var(--hivis);
+  font-size: 9.5px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow .flow-path,
+  .flow .flow-node.is-hot rect {
+    animation: none;
+  }
+}
+
+/* ─── college-era badge on work cards ───────────────────────────── */
+.card-top {
+  gap: 10px;
+}
+.card-era {
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+  color: var(--bone-dim);
+  text-transform: uppercase;
+}
+.card-mark {
+  margin-left: auto;
 }

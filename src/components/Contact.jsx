@@ -48,13 +48,13 @@ export default function Contact() {
     return () => ctx.revert()
   }, [])
 
-  const line1 = 'Got something'.split(' ')
-  const line2 = 'playful in mind?'.split(' ')
+  const line1 = 'Got a project'.split(' ')
+  const line2 = 'in mind?'.split(' ')
 
   return (
     <section className="section contact" id="contact" ref={ref}>
       <div className="container">
-        <h2 className="contact-title" aria-label="Got something playful in mind?">
+        <h2 className="contact-title" aria-label="Got a project in mind?">
           <span className="line" aria-hidden="true">
             {line1.map((w, i) => (
               <span className="word" key={i}>{w}&nbsp;</span>

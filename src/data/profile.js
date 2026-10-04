@@ -11,7 +11,7 @@ export const profile = {
   timezone: 'Asia/Kolkata',
   almaMater: "IIT Madras '24",
   blurb:
-    'Software engineer on Adobe\u2019s Illustrator team, working where computer graphics meets machine learning. Before that, IIT Madras \u201924. I like building tools that feel like toys.',
+    'Software engineer on Adobe\u2019s Illustrator team, working where computer graphics meets machine learning. Before that, IIT Madras \u201924. I like building tools that are simple, fast, and genuinely useful.',
   resume:
     'https://drive.google.com/file/d/10rm-Ft-gRdgMi2urkm50y1zvDmopbt7E/view',
   email: 'krutikmalani480@gmail.com',

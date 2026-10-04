@@ -23,7 +23,7 @@ const MARQUEE_ITEMS = [
   'Android',
   'IIT Madras ’24',
   'Chennai',
-  'Playful systems',
+  'Computer Graphics',
 ]
 
 export default function App() {
@@ -67,7 +67,7 @@ export default function App() {
         <About />
 
         <div className="marquee-band marquee-band--ghost" aria-hidden="true">
-          <Marquee items={['Let’s build', '✦', 'something playful', '✦']} variant="ghost" duration={22} />
+          <Marquee items={['Let’s build', '✦', 'together', '✦']} variant="ghost" duration={22} />
         </div>
 
         <Contact />

@@ -1,6 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { gsap, prefersReducedMotion } from '../lib/anim'
 import { papers } from '../data/research'
+import SizzlerPlayer from './SizzlerPlayer'
+import PaperTree from './PaperTree'
+import PaperFlow from './PaperFlow'
 
 function Authors({ authors }) {
   const parts = authors.split('Krutik Malani')
@@ -16,9 +19,9 @@ function Authors({ authors }) {
   )
 }
 
-function PaperCard({ paper }) {
+function PaperInfo({ paper }) {
   return (
-    <article className={`paper ${paper.featured ? 'paper--featured' : ''}`}>
+    <div className="panel-info">
       <div className="paper-venue">
         <span className="chip chip--venue">{paper.venue}</span>
         {paper.venueNote && <span className="chip">{paper.venueNote}</span>}
@@ -42,100 +45,97 @@ function PaperCard({ paper }) {
         ))}
       </div>
       <span className="paper-aff mono">{paper.affiliation}</span>
-    </article>
+    </div>
   )
 }
 
 export default function Research() {
-  const sectionRef = useRef(null)
-  const pinRef = useRef(null)
-  const trackRef = useRef(null)
-  const progressRef = useRef(null)
+  const ref = useRef(null)
 
   useEffect(() => {
-    const mm = gsap.matchMedia()
-
-    mm.add('(min-width: 901px) and (prefers-reduced-motion: no-preference)', () => {
-      const track = trackRef.current
-      const getDistance = () => Math.max(0, track.scrollWidth - window.innerWidth + 120)
-
-      const tween = gsap.to(track, {
-        x: () => -getDistance(),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top top',
-          end: () => `+=${getDistance() + window.innerHeight * 0.4}`,
-          pin: pinRef.current,
-          scrub: 1,
-          invalidateOnRefresh: true,
-          anticipatePin: 1,
-        },
-      })
-
-      const bar = progressRef.current
-      if (bar) {
+    if (prefersReducedMotion()) return undefined
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray('.panel').forEach((panel) => {
         gsap.fromTo(
-          bar,
-          { scaleX: 0 },
+          panel,
+          { y: 64, opacity: 0 },
           {
-            scaleX: 1,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top top',
-              end: () => `+=${getDistance() + window.innerHeight * 0.4}`,
-              scrub: 1,
-            },
+            y: 0,
+            opacity: 1,
+            duration: 1.05,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: panel, start: 'top 84%', once: true },
           }
         )
-      }
-      return () => tween.scrollTrigger?.kill()
-    })
-
-    mm.add('(min-width: 901px) and (prefers-reduced-motion: reduce)', () => {
-      trackRef.current?.classList.add('is-scrollable')
-    })
-
-    return () => mm.revert()
+      })
+    }, ref)
+    return () => ctx.revert()
   }, [])
 
+  const [vectorark, beyondPixels, taming] = papers
+
   return (
-    <section className="research" id="research" ref={sectionRef}>
-      <div className="research-pin" ref={pinRef}>
-        <div className="container research-head">
+    <section className="section research" id="research" ref={ref}>
+      <div className="container">
+        <header className="section-head">
           <h2>Research</h2>
           <p className="sub">
-            At Adobe I work where graphics meets generative AI — teaching models
-            to see vectors, and measuring what they preserve.
+            Peer-reviewed and preprint work from Adobe — teaching models to see
+            vectors, and measuring what they preserve.
           </p>
-        </div>
+        </header>
 
-        <div className="research-track" ref={trackRef}>
-          {papers.map((p) => (
-            <PaperCard key={p.id} paper={p} />
-          ))}
+        {/* 1 — VectorArk with the paper's own animated demo */}
+        <article className="panel">
+          <PaperInfo paper={vectorark} />
+          <div className="panel-visual">
+            <SizzlerPlayer />
+          </div>
+        </article>
 
-          <article className="paper paper--outro">
-            <span className="paper-outro-mark" aria-hidden="true">✦</span>
-            <h3 className="paper-title">More on the way</h3>
-            <p className="paper-abstract">
-              New work is cooking. Until it lands, the archive has everything.
+        {/* 2 — Beyond the Pixels with the decision-tree diagram */}
+        <article className="panel panel--rev">
+          <PaperInfo paper={beyondPixels} />
+          <div className="panel-visual">
+            <div className="visual-card">
+              <PaperTree />
+            </div>
+            <p className="panel-caption mono">
+              Hierarchical decomposition: subject → type / style → attributes →
+              verdicts.
             </p>
-            <a
-              className="paper-link"
-              href="https://www.semanticscholar.org/author/2391802926"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="READ"
-            >
-              All publications <span className="arr">↗</span>
-            </a>
-          </article>
-        </div>
+          </div>
+        </article>
 
-        <div className="research-progress" aria-hidden="true">
-          <span className="research-progress-bar" ref={progressRef} />
+        {/* 3 — Taming Identity with the flow diagram */}
+        <article className="panel">
+          <PaperInfo paper={taming} />
+          <div className="panel-visual">
+            <div className="visual-card">
+              <PaperFlow />
+            </div>
+            <p className="panel-caption mono">
+              Two streams, one latent — identity preserved without architectural
+              changes.
+            </p>
+          </div>
+        </article>
+
+        <div className="research-outro">
+          <span className="research-outro-mark" aria-hidden="true">✦</span>
+          <div>
+            <h3>More on the way</h3>
+            <p className="mono">New work is cooking. Until it lands, the archive has everything.</p>
+          </div>
+          <a
+            className="paper-link"
+            href="https://www.semanticscholar.org/author/2391802926"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="READ"
+          >
+            All publications <span className="arr">↗</span>
+          </a>
         </div>
       </div>
     </section>
