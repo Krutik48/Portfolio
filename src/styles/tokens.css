@@ -1,0 +1,35 @@
+/* ─── Krutik Malani — design tokens ─────────────────────────────── */
+:root {
+  /* color */
+  --ink: #08090b;
+  --ink-2: #0e1013;
+  --ink-3: #14161a;
+  --bone: #ece9e2;
+  --bone-dim: #b9b7b0;
+  --steel: #8a9099;
+  --hivis: #ff4d00;
+  --hivis-dim: rgba(255, 77, 0, 0.14);
+  --line: rgba(236, 233, 226, 0.13);
+  --line-strong: rgba(236, 233, 226, 0.32);
+
+  /* type */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --fs-hero: clamp(3.1rem, 11.5vw, 10.5rem);
+  --fs-h2: clamp(2.2rem, 6vw, 4.6rem);
+  --fs-h3: clamp(1.15rem, 1.8vw, 1.5rem);
+  --fs-body: clamp(0.98rem, 1.15vw, 1.12rem);
+  --fs-mono: clamp(0.68rem, 0.8vw, 0.78rem);
+
+  /* layout */
+  --pad: clamp(20px, 4.5vw, 64px);
+  --maxw: 1580px;
+  --nav-h: 68px;
+  --radius: 6px;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+}
