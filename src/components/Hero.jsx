@@ -7,8 +7,8 @@ import portrait from '../assets/img/krutik.jpg'
 
 const TYPE_PHRASES = [
   'Paper accepted at CVPR 2026',
+  'IIT Madras, class of \u201924',
   'Model evaluation for generative AI',
-  'Building tools I couldn\u2019t find',
 ]
 
 function useIstClock() {
@@ -122,7 +122,8 @@ export default function Hero({ start }) {
 
           <p className="hero-type">
             <span className="sr-only">
-              Paper accepted at CVPR 2026. Model evaluation for generative AI.
+              Paper accepted at CVPR 2026. IIT Madras, class of 2024. Model
+              evaluation for generative AI.
             </span>
             <span className="hero-type-vis" aria-hidden="true">
               {typed}
