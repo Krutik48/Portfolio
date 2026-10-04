@@ -80,8 +80,8 @@ export default function Research() {
         <header className="section-head">
           <h2>Research</h2>
           <p className="sub">
-            Papers from my time at Adobe &mdash; teaching models to think in
-            vectors, and evaluating what they preserve.
+            Selected papers &mdash; teaching models to think in vectors, and
+            evaluating what they preserve.
           </p>
         </header>
 

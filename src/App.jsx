@@ -14,11 +14,11 @@ import useLenis from './hooks/useLenis'
 import { prefersReducedMotion } from './lib/anim'
 
 const TICKER_ITEMS = [
-  'Adobe Illustrator',
+  'Computer Vision × ML',
   'Vectorization',
   'Generative AI',
   'CVPR 2026',
-  'Computer Graphics',
+  'Model Evaluation',
   'Open to conversations',
 ]
 

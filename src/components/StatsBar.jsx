@@ -1,10 +1,19 @@
 import { useEffect, useRef } from 'react'
 import { gsap, prefersReducedMotion } from '../lib/anim'
+import { profile } from '../data/profile'
+
+/* Years of experience computed from profile.careerStart — stays correct
+   across job changes without editing this file. */
+function yearsSince(dateISO) {
+  const years =
+    (Date.now() - new Date(dateISO).getTime()) / (365.25 * 24 * 3600 * 1000)
+  return `${Math.max(1, Math.floor(years))}+ yrs`
+}
 
 const stats = [
   { value: 3, pad: 2, suffix: '', label: 'Research papers', note: '1 CVPR · 2 preprints' },
   { value: 11, pad: 2, suffix: '', label: 'Projects built', note: 'Web & Android' },
-  { value: null, display: '2+ yrs', label: 'At Adobe', note: 'Illustrator team' },
+  { value: null, display: yearsSince(profile.careerStart), label: 'Industry experience', note: 'Vision & ML' },
   { value: null, display: '’24', label: 'IIT Madras', note: 'B.Tech · Electrical' },
 ]
 

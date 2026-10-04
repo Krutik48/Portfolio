@@ -6,10 +6,9 @@ import useTypewriter from '../hooks/useTypewriter'
 import portrait from '../assets/img/krutik.jpg'
 
 const TYPE_PHRASES = [
-  'Software engineer at Adobe',
-  'Vectorization & generative AI',
-  'IIT Madras, class of \u201924',
-  'VectorArk \u2014 CVPR 2026',
+  'Paper accepted at CVPR 2026',
+  'Model evaluation for generative AI',
+  'Building tools I couldn\u2019t find',
 ]
 
 function useIstClock() {
@@ -123,8 +122,7 @@ export default function Hero({ start }) {
 
           <p className="hero-type">
             <span className="sr-only">
-              Software engineer at Adobe — vectorization, generative AI, CVPR
-              2026, IIT Madras &rsquo;24.
+              Paper accepted at CVPR 2026. Model evaluation for generative AI.
             </span>
             <span className="hero-type-vis" aria-hidden="true">
               {typed}
@@ -133,9 +131,8 @@ export default function Hero({ start }) {
           </p>
 
           <p className="hero-sub">
-            Image vectorization and generative models at Adobe &mdash; sitting
-            where computer graphics meets machine learning. Co-author of
-            VectorArk, accepted at CVPR&nbsp;2026.
+            Software engineer at {profile.company}, working on image
+            vectorization and generative models.
           </p>
 
           <div className="hero-cta-row">

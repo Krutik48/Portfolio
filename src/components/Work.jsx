@@ -4,18 +4,46 @@ import { projects, groups } from '../data/projects'
 
 const FEATURED = ['simon', 'music']
 
+function domainOf(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '')
+  } catch {
+    return 'localhost'
+  }
+}
+
 function ProjectCard({ project }) {
   const wide = FEATURED.includes(project.id)
+  const isWeb = project.category === 'web'
   return (
     <article className={`card ${wide ? 'card--wide' : ''}`}>
       <a
-        className="card-media"
+        className={`card-media card-media--${project.category}`}
         href={project.demo}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${project.title} — open live`}
       >
-        <img src={project.img} alt={`${project.title} preview`} loading="lazy" />
+        {isWeb ? (
+          <span className="browser">
+            <span className="browser-bar">
+              <span className="browser-dots" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+              </span>
+              <span className="browser-url mono">{domainOf(project.demo)}</span>
+            </span>
+            <span className="browser-view">
+              <img src={project.img} alt={`${project.title} preview`} loading="lazy" />
+            </span>
+          </span>
+        ) : (
+          <span className="phone">
+            <span className="phone-notch" aria-hidden="true" />
+            <img src={project.img} alt={`${project.title} preview`} loading="lazy" />
+          </span>
+        )}
       </a>
       <div className="card-body">
         <div className="card-top mono">

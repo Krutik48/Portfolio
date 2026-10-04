@@ -3,15 +3,17 @@ export const profile = {
   name: 'Krutik Malani',
   firstName: 'Krutik',
   lastName: 'Malani',
-  role: 'Software Engineer, Adobe',
-  team: 'Illustrator Team',
+  role: 'Software Engineer',
+  company: 'Adobe', // ← current employer: update this one line on a job change
+  team: 'Illustrator team',
+  careerStart: '2024-06-01', // powers the computed "years of experience" stat
   since: 'Jun 2024',
   location: 'Chennai, India',
   coords: '13.0827°N, 80.2707°E',
   timezone: 'Asia/Kolkata',
   almaMater: "IIT Madras '24",
   blurb:
-    'Software engineer on Adobe\u2019s Illustrator team, working where computer graphics meets machine learning. Before that, IIT Madras \u201924. I like building tools that are simple, fast, and genuinely useful.',
+    'I build for problems I run into \u2014 usually the ones without a good solution out there. When nothing fits, I make the tool, use it every day, and keep refining it. That\u2019s the work I care about most.',
   resume:
     'https://drive.google.com/file/d/10rm-Ft-gRdgMi2urkm50y1zvDmopbt7E/view',
   email: 'krutikmalani480@gmail.com',
@@ -27,9 +29,9 @@ export const profile = {
   timeline: [
     {
       org: 'Adobe',
-      detail: 'Illustrator Team',
+      detail: 'Illustrator team',
       period: 'Jun 2024 — Present',
-      note: 'Vectorization and generative models for Illustrator \u2014 and the research around them: VectorArk (CVPR 2026) and two preprints.',
+      note: 'From research prototypes to shipped Illustrator features.',
     },
     {
       org: 'IIT Madras',
@@ -38,7 +40,7 @@ export const profile = {
       note: 'Where the experiments started \u2014 games, apps, and APIs.',
     },
   ],
-  toolbox: ['Computer Graphics', 'Generative AI', 'Machine Learning', 'PyTorch', 'Python', 'React', 'Web', 'Android'],
+  toolbox: ['Computer Vision', 'Generative AI', 'Machine Learning', 'PyTorch', 'Python', 'React', 'Web', 'Android'],
 }
 
 export const navLinks = [
