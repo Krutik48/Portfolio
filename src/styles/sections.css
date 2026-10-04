@@ -221,17 +221,47 @@
 .hero-content {
   position: relative;
   z-index: 2;
-}
-.hero-kicker {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4.6fr);
+  gap: clamp(30px, 4.5vw, 76px);
   align-items: center;
-  gap: 10px 14px;
-  color: var(--red);
-  margin-bottom: clamp(20px, 3.5vh, 38px);
 }
-.hero-kicker .sep {
-  color: var(--ink-faint);
+.hero-text {
+  min-width: 0;
+}
+.hero-greet {
+  display: block;
+  font-size: 0.34em;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.005em;
+  color: var(--ink-soft);
+  padding-bottom: 0.24em;
+}
+.hero-type {
+  margin-top: clamp(16px, 2.4vh, 24px);
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 1vw, 0.94rem);
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  min-height: 1.6em;
+}
+.hero-type-vis {
+  display: inline;
+}
+.hero-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 4px;
+  vertical-align: -0.14em;
+  background: var(--red);
+  animation: caret-blink 1.1s steps(2, start) infinite;
+}
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
 }
 .hero-title {
   font-size: var(--fs-hero);
@@ -312,6 +342,93 @@
     top: 100%;
   }
 }
+
+/* ─── Hero portrait — a clean, static editorial plate ───────────── */
+.hero-figure {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+.hero-portrait {
+  position: relative;
+  width: clamp(264px, 29vw, 420px);
+}
+.hero-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 16%;
+  border: 1px solid var(--line-strong);
+}
+.hero-corner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  z-index: 3;
+}
+.hero-corner::before,
+.hero-corner::after {
+  content: '';
+  position: absolute;
+  background: var(--ink);
+}
+.hero-corner::before {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+}
+.hero-corner::after {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+}
+.hero-corner--tl {
+  top: -8px;
+  left: -8px;
+}
+.hero-corner--tr {
+  top: -8px;
+  right: -8px;
+}
+.hero-corner--bl {
+  bottom: -8px;
+  left: -8px;
+}
+.hero-corner--br {
+  bottom: -8px;
+  right: -8px;
+}
+.hero-figure-cap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.6rem;
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: clamp(30px, 6vw, 44px);
+  }
+  .hero-figure {
+    align-items: flex-start;
+  }
+  .hero-portrait {
+    width: min(72vw, 340px);
+  }
+  .hero-meta {
+    position: static;
+    left: auto;
+    transform: none;
+    width: auto;
+    margin-top: clamp(30px, 5vw, 44px);
+  }
+}
 @media (max-width: 620px) {
   .hero-meta {
     flex-direction: column;
@@ -319,6 +436,12 @@
   }
   .hero-scroll-line {
     height: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-caret {
+    display: none;
   }
 }
 
@@ -921,29 +1044,6 @@
   gap: clamp(40px, 6vw, 110px);
   align-items: start;
 }
-.about-portrait-wrap {
-  position: sticky;
-  top: calc(var(--nav-h) + 4vh);
-}
-.about-portrait {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--line-strong);
-}
-.about-portrait img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: 50% 22%;
-  transition: transform 0.8s var(--ease-out);
-}
-.about-portrait:hover img {
-  transform: scale(1.02);
-}
-.about-portrait-cap {
-  display: block;
-  margin-top: 14px;
-}
 .about-copy h2 {
   font-size: var(--fs-h2);
   margin-bottom: 22px;
@@ -962,7 +1062,7 @@
   color: var(--ink);
 }
 .about-timeline {
-  margin-top: clamp(34px, 4vw, 56px);
+  margin-top: 0;
 }
 .tl-row {
   display: grid;
@@ -1004,9 +1104,8 @@
   .about-grid {
     grid-template-columns: 1fr;
   }
-  .about-portrait-wrap {
-    position: static;
-    max-width: 380px;
+  .about-timeline {
+    margin-top: clamp(30px, 5vw, 44px);
   }
   .tl-row {
     grid-template-columns: 1fr;

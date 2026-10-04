@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { prefersReducedMotion } from '../lib/anim'
 
 /**
  * VectorArk "In Action" — embeds the paper's released sizzler demos,
@@ -24,6 +25,7 @@ export default function SizzlerPlayer() {
   const [runKey, setRunKey] = useState(0)
   const [observerLive, setObserverLive] = useState(false)
   const [farAway, setFarAway] = useState(false)
+  const [reduced] = useState(() => prefersReducedMotion())
   const holderRef = useRef(null)
 
   useEffect(() => {
@@ -40,20 +42,25 @@ export default function SizzlerPlayer() {
     return () => io.disconnect()
   }, [])
 
-  const mountIframe = !observerLive || !farAway
+  const mountIframe = !reduced && (!observerLive || !farAway)
   const src = `${import.meta.env.BASE_URL}sizzlers/${sample.file}${sample.query}`
 
   return (
     <div className="sizzler" ref={holderRef}>
       <div className="sizzler-bar mono">
-        <span>VectorArk in action</span>
+        <span>VectorArk in Action</span>
         <span className="sizzler-live">
           <i aria-hidden="true" />
           live demo
         </span>
       </div>
 
-      <div className="sizzler-frame">
+      <div
+        className="sizzler-frame"
+        role="tabpanel"
+        id="sizzler-panel"
+        aria-labelledby={`sizzler-tab-${sample.id}`}
+      >
         {mountIframe ? (
           <iframe
             key={`${sample.id}-${runKey}`}
@@ -71,11 +78,14 @@ export default function SizzlerPlayer() {
       </div>
 
       <div className="sizzler-controls">
-        <div className="sizzler-tabs" role="tablist" aria-label="Demo sample">
+        <div className="sizzler-tabs" role="tablist" aria-label="VectorArk demo samples">
           {SAMPLES.map((s) => (
             <button
               key={s.id}
               role="tab"
+              id={`sizzler-tab-${s.id}`}
+              aria-controls="sizzler-panel"
+              aria-label={`Sample ${s.label}`}
               aria-selected={sample.id === s.id}
               className={`lab-tab mono ${sample.id === s.id ? 'is-active' : ''}`}
               onClick={() => setSample(s)}
@@ -93,8 +103,8 @@ export default function SizzlerPlayer() {
       </div>
 
       <p className="panel-caption mono">
-        Corner tracing, rounding and colour, animated live — the same reels that
-        run on{' '}
+        Corner tracing, rounding, and color, animated live — the same reels
+        that run on{' '}
         <a
           href="https://vectorark.github.io/"
           target="_blank"

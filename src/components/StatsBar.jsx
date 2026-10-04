@@ -4,7 +4,7 @@ import { profile } from '../data/profile'
 
 const stats = [
   { value: 3, pad: 2, suffix: '', label: 'Research papers', note: 'CVPR 2026 + arXiv' },
-  { value: 11, pad: 2, suffix: '', label: 'Projects shipped', note: 'web & android' },
+  { value: 11, pad: 2, suffix: '', label: 'Projects built', note: 'Web & Android' },
   { value: null, display: 'Jun ’24', label: 'Joined Adobe', note: profile.team },
   { value: null, display: '’24', label: profile.almaMater, note: 'Class of' },
 ]

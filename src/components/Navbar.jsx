@@ -49,10 +49,9 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Resume <span className="arr">↗</span>
+              Résumé <span className="arr">↗</span>
             </a>
           </nav>
-
           <button
             className={`nav-burger ${open ? 'is-open' : ''}`}
             onClick={() => setOpen((v) => !v)}
@@ -87,7 +86,7 @@ export default function Navbar() {
             style={{ transitionDelay: '0.32s' }}
             tabIndex={open ? 0 : -1}
           >
-            Resume ↗
+            Résumé ↗
           </a>
         </nav>
         <div className="menu-foot mono">

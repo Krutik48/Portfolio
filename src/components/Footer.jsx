@@ -26,7 +26,7 @@ export default function Footer() {
           {profile.location} · {time} IST
         </span>
         <span className="mono footer-made">
-          Set in Fraunces &amp; Instrument Sans
+          Set in Fraunces, Instrument Sans &amp; JetBrains Mono
         </span>
         <button className="footer-top mono" onClick={scrollToTop}>
           Back to top ↑
